@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    class Tournament : BaseEntity
+    public class Team : BaseEntity
     {
-        public List<Team> Competitors { get; set; }
-        public string Name { get; set; }
-
-        public Tournament()
+        HashSet<Player> Team { get; set; }
+        public string  Name{ get; set; }     
+  
+        public Team()
         {
-            this.Competitors = new List<Team>();
+            this.Team = new HashSet<Player>();
             this.Name = String.Empty;
         }
     }

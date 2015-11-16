@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    class Player
+    public class Player : BaseEntity
     {
-        public PersonalInfo PInfo { get; set; }
-        public List<MatchResult> Results { get; set; }
+        public PersonalInfo PersonalInfo { get; set; }
+        public List<Match> Results { get; set; }
+
+        public Player()
+        {
+            this.PersonalInfo = new PersonalInfo();
+            this.Results = new List<Match>();
+        }
     }
 }
